@@ -1,22 +1,10 @@
-import {useState} from "react";
-import Customer from "../../../model/Customer";
-
-const CustomerForm = (props) => {
-    const [id, setId] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [address, setAddress] = useState('');
-    const onAddCustomer = () => {
-        props.setList(Customer(id, firstName, lastName, address));
-        onClearForm();
-
-    }
-    const onClearForm = () => {
-        setId('');
-        setFirstName('');
-        setLastName('');
-        setAddress('');
-    }
+const CustomerForm = ({setList, controller}) => {
+    const {
+        id, setId,
+        firstName, setFirstName,
+        lastName, setLastName,
+        address, setAddress, onAddCustomer
+    } = controller();
     return (
         <>
             <h3>Customer Form</h3>
@@ -56,7 +44,7 @@ const CustomerForm = (props) => {
                 onChange={e => setAddress(e.target.value)}
             />
             <br/>
-            <button onClick={onAddCustomer}>
+            <button onClick={() => onAddCustomer(setList)}>
                 Add
             </button>
         </>
