@@ -1,4 +1,4 @@
-const LoginPage = ({controller, setAuth}) => {
+const LoginPage = ({controller}) => {
     const {
         userName, setUserName,
         password, setPassword,
@@ -24,7 +24,7 @@ const LoginPage = ({controller, setAuth}) => {
                 onChange={e => setPassword(e.target.value)}
             />
             <br/>
-            <button onClick={() => onLogin(setAuth)}>
+            <button onClick={() => onLogin()}>
                 Login
             </button>
         </>

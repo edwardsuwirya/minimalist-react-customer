@@ -2,7 +2,7 @@ const LoginService = () => {
     const Auth = (userCred) => {
         return new Promise((resolve, reject) => {
             if (userCred.userName === 'enigma' && userCred.password === '123456') {
-                resolve('Success')
+                resolve('C001')
             } else {
                 reject('Unauthorized')
             }

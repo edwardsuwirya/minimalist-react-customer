@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import CustomerFormController from "../customerForm/CustomerFormController";
 
 const CustomerPage = ({controller}) => {
-    const {customerList, onCreateCustomer, onGetCustomerList} = controller();
+    const {customerList, onCreateCustomer, onGetCustomerList, onLogout} = controller();
 
     useEffect(() => {
         onGetCustomerList();
@@ -14,6 +14,7 @@ const CustomerPage = ({controller}) => {
         <>
             <CustomerForm setList={onCreateCustomer} controller={CustomerFormController}/>
             <CustomerList list={customerList}/>
+            <button onClick={onLogout}>Logout</button>
         </>
     );
 }
