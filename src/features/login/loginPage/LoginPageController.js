@@ -1,8 +1,7 @@
 import {useState} from "react";
 import UserCred from "../../../model/UserCred";
-import {useDispatch, useSelector} from "react-redux";
-import {userLoginError, userLoginFinished, userLoginStarted} from "../LoginAction";
-import {userIdSelector} from "../LoginSelector";
+import {useDispatch} from "react-redux";
+import {userLoginError, userLoginFinished, userLoginStarted} from "../LoginSlice";
 
 const LoginPageController = (service) => {
     const {Auth} = service();
@@ -15,13 +14,13 @@ const LoginPageController = (service) => {
             dispatch(userLoginStarted())
             const resp = await Auth(UserCred(userName, password));
             if (resp) {
-                dispatch(userLoginFinished(resp))
+                dispatch(userLoginFinished({userId: resp}))
             } else {
-                dispatch(userLoginError('Unauthorized'));
+                dispatch(userLoginError({error: 'Unauthorized'}));
             }
         } catch (e) {
             console.log(e);
-            dispatch(userLoginError('Unauthorized'));
+            dispatch(userLoginError({error: 'Unauthorized'}));
         }
     }
     return {

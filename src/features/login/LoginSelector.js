@@ -1,12 +1,12 @@
 export const userIdSelector = state => {
     console.log(state)
-    return state.loginReducer.userId
+    return state.login.userId
 }
 export const loadingSelector = state => {
     console.log(state)
-    return state.loginReducer.loading
+    return state.login.loading
 }
 export const errorSelector = state => {
     console.log(state)
-    return state.loginReducer.error
+    return state.login.error
 }

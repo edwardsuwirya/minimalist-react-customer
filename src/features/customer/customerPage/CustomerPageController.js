@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {userLogoutFinished, userLogoutStarted} from "../../login/LoginAction";
+import {userLogoutFinished, userLogoutStarted} from "../../login/LoginSlice";
 
 const CustomerPageController = (service) => {
     const {GetAll, Insert} = service();
