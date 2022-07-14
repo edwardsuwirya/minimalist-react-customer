@@ -1,9 +1,14 @@
+import {useSelector} from "react-redux";
+import {errorSelector, loadingSelector,} from "../LoginSelector";
+
 const LoginPage = ({controller}) => {
     const {
         userName, setUserName,
         password, setPassword,
         onLogin
     } = controller();
+    const isLoading = useSelector(loadingSelector)
+    const isError = useSelector(errorSelector)
     return (
         <>
             <label>User Name</label>
@@ -24,9 +29,10 @@ const LoginPage = ({controller}) => {
                 onChange={e => setPassword(e.target.value)}
             />
             <br/>
-            <button onClick={() => onLogin()}>
+            <button onClick={() => onLogin()} disabled={isLoading}>
                 Login
             </button>
+            {isError !== '' ? <p>{isError}</p> : <></>}
         </>
     )
 }

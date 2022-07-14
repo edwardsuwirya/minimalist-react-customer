@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {userLogout} from "../../login/LoginAction";
+import {userLogoutFinished, userLogoutStarted} from "../../login/LoginAction";
 
 const CustomerPageController = (service) => {
     const {GetAll, Insert} = service();
@@ -19,7 +19,8 @@ const CustomerPageController = (service) => {
         }
     }
     const onLogout = () => {
-        dispatch(userLogout())
+        dispatch(userLogoutStarted())
+        dispatch(userLogoutFinished())
     }
 
     return {
