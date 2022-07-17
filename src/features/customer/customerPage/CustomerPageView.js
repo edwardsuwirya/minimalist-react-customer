@@ -1,9 +1,10 @@
-import CustomerForm from "../customerForm/CustomerForm";
+import CustomerFormView from "../customerForm/CustomerFormView";
 import CustomerList from "../customerList/CustomerList";
 import {useEffect} from "react";
 import CustomerFormController from "../customerForm/CustomerFormController";
+import PropTypes from "prop-types";
 
-const CustomerPage = ({controller}) => {
+const CustomerPageView = ({controller}) => {
     const {customerList, onCreateCustomer, onGetCustomerList} = controller();
 
     useEffect(() => {
@@ -12,10 +13,12 @@ const CustomerPage = ({controller}) => {
 
     return (
         <>
-            <CustomerForm setList={onCreateCustomer} controller={CustomerFormController}/>
+            <CustomerFormView setList={onCreateCustomer} controller={CustomerFormController}/>
             <CustomerList list={customerList}/>
         </>
     );
 }
-
-export default CustomerPage;
+CustomerPageView.propTypes = {
+    controller: PropTypes.func.isRequired
+}
+export default CustomerPageView;
