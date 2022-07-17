@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import {useSelector} from "react-redux";
 import {errorSelector, loadingSelector,} from "../LoginSelector";
-
-const LoginPage = ({controller}) => {
+const LoginPageView = ({controller}) => {
     const {
         userName, setUserName,
         password, setPassword,
@@ -36,5 +36,7 @@ const LoginPage = ({controller}) => {
         </>
     )
 }
-
-export default LoginPage;
+LoginPageView.propTypes = {
+    controller: PropTypes.func.isRequired
+}
+export default LoginPageView;
