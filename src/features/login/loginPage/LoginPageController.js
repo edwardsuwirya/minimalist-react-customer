@@ -1,8 +1,7 @@
 import {useState} from "react";
 import UserCred from "../../../model/UserCred";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {userLoginError, userLoginFinished, userLoginStarted} from "../LoginAction";
-import {userIdSelector} from "../LoginSelector";
 
 const LoginPageController = (service) => {
     const {Auth} = service();
