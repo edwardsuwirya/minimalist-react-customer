@@ -1,8 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const CustomerPageController = (service) => {
     const {GetAll, Insert} = service();
     const [customerList, setCustomerList] = useState([])
+
+    useEffect(() => {
+        onGetCustomerList();
+    }, [])
 
     const onGetCustomerList = async () => {
         const customerList = await GetAll();
@@ -19,7 +23,6 @@ const CustomerPageController = (service) => {
     return {
         customerList,
         onCreateCustomer,
-        onGetCustomerList
     }
 }
 

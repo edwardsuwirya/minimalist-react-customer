@@ -1,15 +1,10 @@
 import CustomerFormView from "../customerForm/CustomerFormView";
 import CustomerList from "../customerList/CustomerList";
-import {useEffect} from "react";
 import CustomerFormController from "../customerForm/CustomerFormController";
 import PropTypes from "prop-types";
 
 const CustomerPageView = ({controller}) => {
-    const {customerList, onCreateCustomer, onGetCustomerList} = controller();
-
-    useEffect(() => {
-        onGetCustomerList();
-    }, [])
+    const {customerList, onCreateCustomer} = controller();
 
     return (
         <>

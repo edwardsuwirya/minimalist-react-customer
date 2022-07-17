@@ -1,4 +1,6 @@
-const LoginPage = ({controller, setAuth}) => {
+import PropTypes from "prop-types";
+
+const LoginPageView = ({controller, setAuth}) => {
     const {
         userName, setUserName,
         password, setPassword,
@@ -30,5 +32,8 @@ const LoginPage = ({controller, setAuth}) => {
         </>
     )
 }
-
-export default LoginPage;
+LoginPageView.propTypes = {
+    setAuth: PropTypes.func.isRequired,
+    controller: PropTypes.func.isRequired
+}
+export default LoginPageView;
