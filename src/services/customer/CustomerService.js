@@ -1,10 +1,11 @@
 import Customer from "../../model/Customer";
 
+let list = [
+    Customer('C001', 'Fadley', 'Mustopa', 'Ragunan'),
+    Customer('C002', 'Jono', 'Nurkosim', 'Mampang'),
+];
+
 const CustomerService = () => {
-    let list = [
-        Customer('C001', 'Fadley', 'Mustopa', 'Ragunan'),
-        Customer('C002', 'Jono', 'Nurkosim', 'Mampang'),
-    ];
     const GetAll = () => {
         return new Promise((resolve, reject) => {
             resolve(list)
