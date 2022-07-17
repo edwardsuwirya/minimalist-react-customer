@@ -1,4 +1,6 @@
-const CustomerForm = ({setList, controller}) => {
+import PropTypes from "prop-types";
+
+const CustomerFormView = ({setList, controller}) => {
     const {
         id, setId,
         firstName, setFirstName,
@@ -50,5 +52,8 @@ const CustomerForm = ({setList, controller}) => {
         </>
     )
 }
-
-export default CustomerForm;
+CustomerFormView.propTypes = {
+    setList: PropTypes.func.isRequired,
+    controller: PropTypes.func.isRequired
+}
+export default CustomerFormView;

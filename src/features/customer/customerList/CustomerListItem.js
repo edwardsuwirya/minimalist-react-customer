@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const CustomerListItem = ({customer}) => (
     <li>
         <div>{customer.id}</div>
@@ -5,4 +7,7 @@ const CustomerListItem = ({customer}) => (
         <div>{customer.address}</div>
     </li>
 );
+CustomerListItem.propTypes = {
+    customer: PropTypes.object
+}
 export default CustomerListItem;
