@@ -4,12 +4,13 @@ import CustomerFormController from "../customerForm/CustomerFormController";
 import PropTypes from "prop-types";
 
 const CustomerPageView = ({controller}) => {
-    const {customerList, onCreateCustomer} = controller();
+    const {customerList, onCreateCustomer, onLogout} = controller();
 
     return (
         <>
             <CustomerFormView setList={onCreateCustomer} controller={CustomerFormController}/>
             <CustomerList list={customerList}/>
+            <button onClick={onLogout}>Logout</button>
         </>
     );
 }
