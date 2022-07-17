@@ -1,4 +1,5 @@
 import CustomerListItem from "./CustomerListItem";
+import PropTypes from "prop-types";
 
 const CustomerList = ({list}) => (
     <ul>
@@ -7,5 +8,7 @@ const CustomerList = ({list}) => (
         ))}
     </ul>
 );
-
+CustomerList.propTypes = {
+    list: PropTypes.arrayOf(PropTypes.object)
+}
 export default CustomerList;
