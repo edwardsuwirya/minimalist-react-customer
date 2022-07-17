@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from "react";
+import PropTypes from "prop-types";
 
 const list = [
     {
@@ -26,10 +27,10 @@ const App = () => {
     );
 }
 const CustomerForm = (props) => {
-    const [id, setId] = useState();
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [address, setAddress] = useState();
+    const [id, setId] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [address, setAddress] = useState('');
     const onAddCustomer = () => {
         props.setList(list => [...list, {
             id: id, firstName: firstName, lastName: lastName, address: address
@@ -88,6 +89,10 @@ const CustomerForm = (props) => {
         </>
     )
 }
+CustomerForm.propTypes = {
+    setList: PropTypes.func
+}
+
 const CustomerList = ({list}) => (
     <ul>
         {list.map(item => (
@@ -95,6 +100,9 @@ const CustomerList = ({list}) => (
         ))}
     </ul>
 );
+CustomerList.propTypes = {
+    list: PropTypes.arrayOf(PropTypes.object)
+}
 
 const CustomerListItem = ({item}) => (
     <li>
@@ -103,4 +111,8 @@ const CustomerListItem = ({item}) => (
         <div>{item.address}</div>
     </li>
 );
+
+CustomerListItem.propTypes = {
+    item: PropTypes.object
+}
 export default App;
