@@ -1,11 +1,11 @@
 import './App.css';
 import CustomerService from "./services/customer/CustomerService";
-import CustomerPageController from "./features/customer/customerPage/CustomerPageController";
-import LoginPageController from "./features/login/loginPage/LoginPageController";
+import useCustomerPageController from "./features/customer/customerPage/useCustomerPageController";
+import LoginPageView from "./features/login/loginPage/LoginPageView";
+import useLoginPageController from "./features/login/loginPage/useLoginPageController";
 import LoginService from "./services/customer/LoginService";
 import {useSelector} from "react-redux";
 import {userIdSelector} from "./features/login/LoginSelector";
-import LoginPageView from "./features/login/loginPage/LoginPageView";
 import CustomerPageView from "./features/customer/customerPage/CustomerPageView";
 
 const App = () => {
@@ -13,8 +13,8 @@ const App = () => {
     return (
         <>
             {userId === "" ?
-                <LoginPageView controller={() => LoginPageController(LoginService)}/> :
-                <CustomerPageView controller={() => CustomerPageController(CustomerService)}/>
+                <LoginPageView controller={useLoginPageController} service={LoginService}/> :
+                <CustomerPageView controller={useCustomerPageController} service={CustomerService}/>
             }
         </>
     );
