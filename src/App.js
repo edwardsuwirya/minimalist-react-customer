@@ -6,7 +6,7 @@ import useCustomerPageController from "./features/customer/customerPage/useCusto
 const App = () => {
     return (
         <>
-            <CustomerPageView controller={() => useCustomerPageController(CustomerService)}/>
+            <CustomerPageView controller={useCustomerPageController} service={CustomerService}/>
         </>
     );
 }
