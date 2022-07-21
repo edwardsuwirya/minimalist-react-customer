@@ -1,7 +1,7 @@
 import {useState} from "react";
 import UserCred from "../../../model/UserCred";
 
-const LoginPageController = (service) => {
+const useLoginPageController = (service) => {
     const {Auth} = service();
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -25,4 +25,4 @@ const LoginPageController = (service) => {
     }
 }
 
-export default LoginPageController;
+export default useLoginPageController;

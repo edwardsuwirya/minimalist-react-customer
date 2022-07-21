@@ -3,8 +3,8 @@ import CustomerList from "../customerList/CustomerList";
 import useCustomerFormController from "../customerForm/useCustomerFormController";
 import PropTypes from "prop-types";
 
-const CustomerPageView = ({controller}) => {
-    const {customerList, onCreateCustomer} = controller();
+const CustomerPageView = ({controller, service}) => {
+    const {customerList, onCreateCustomer} = controller(service);
 
     return (
         <>

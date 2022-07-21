@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
-const LoginPageView = ({controller, setAuth}) => {
+const LoginPageView = ({controller, service, setAuth}) => {
     const {
         userName, setUserName,
         password, setPassword,
         onLogin
-    } = controller();
+    } = controller(service);
     return (
         <>
             <label>User Name</label>
