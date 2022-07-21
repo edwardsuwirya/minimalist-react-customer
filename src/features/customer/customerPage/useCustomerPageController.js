@@ -2,7 +2,7 @@ import {useEffect,useState} from "react";
 import {useDispatch} from "react-redux";
 import {userLogout} from "../../login/LoginAction";
 
-const CustomerPageController = (service) => {
+const useCustomerPageController = (service) => {
     const {GetAll, Insert} = service();
     const [customerList, setCustomerList] = useState([])
     const dispatch = useDispatch();
@@ -34,4 +34,4 @@ const CustomerPageController = (service) => {
     }
 }
 
-export default CustomerPageController;
+export default useCustomerPageController;

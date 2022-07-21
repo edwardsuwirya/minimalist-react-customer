@@ -3,7 +3,7 @@ import UserCred from "../../../model/UserCred";
 import {useDispatch} from "react-redux";
 import {userLogin} from "../LoginAction";
 
-const LoginPageController = (service) => {
+const useLoginPageController = (service) => {
     const {Auth} = service();
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -26,4 +26,4 @@ const LoginPageController = (service) => {
     }
 }
 
-export default LoginPageController;
+export default useLoginPageController;
