@@ -1,6 +1,6 @@
 import './App.css';
 import CustomerService from "./services/customer/CustomerService";
-import CustomerPageController from "./features/customer/customerPage/CustomerPageController";
+import useCustomerPageController from "./features/customer/customerPage/useCustomerPageController";
 import LoginPageView from "./features/login/loginPage/LoginPageView";
 import {useState} from "react";
 import LoginPageController from "./features/login/loginPage/LoginPageController";
@@ -12,9 +12,8 @@ const App = () => {
     return (
         <>
             {isAuthenticated === false ?
-                <LoginPageView controller={() => LoginPageController(LoginService)} setAuth={setAuthenticated}/> :
-                <CustomerPageView controller={() => CustomerPageController(CustomerService)}/>
-            }
+            <LoginPageView controller={() => LoginPageController(LoginService)} setAuth={setAuthenticated}/> :
+            <CustomerPageView controller={() => CustomerPageController(CustomerService)}/>
         </>
     );
 }

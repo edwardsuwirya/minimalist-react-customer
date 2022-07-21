@@ -1,7 +1,7 @@
 import Customer from "../../../model/Customer";
 import {useState} from "react";
 
-const CustomerFormController = () => {
+const useCustomerFormController = () => {
     const [id, setId] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -26,4 +26,4 @@ const CustomerFormController = () => {
         onAddCustomer
     }
 }
-export default CustomerFormController;
+export default useCustomerFormController;
