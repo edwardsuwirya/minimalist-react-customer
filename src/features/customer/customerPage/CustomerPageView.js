@@ -1,6 +1,6 @@
 import CustomerFormView from "../customerForm/CustomerFormView";
 import CustomerList from "../customerList/CustomerList";
-import CustomerFormController from "../customerForm/CustomerFormController";
+import useCustomerFormController from "../customerForm/useCustomerFormController";
 import PropTypes from "prop-types";
 
 const CustomerPageView = ({controller}) => {
@@ -8,7 +8,7 @@ const CustomerPageView = ({controller}) => {
 
     return (
         <>
-            <CustomerFormView setList={onCreateCustomer} controller={CustomerFormController}/>
+            <CustomerFormView setList={onCreateCustomer} controller={useCustomerFormController}/>
             <CustomerList list={customerList}/>
         </>
     );

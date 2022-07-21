@@ -1,12 +1,12 @@
 import './App.css';
 import CustomerPageView from "./features/customer/customerPage/CustomerPageView";
 import CustomerService from "./services/customer/CustomerService";
-import CustomerPageController from "./features/customer/customerPage/CustomerPageController";
+import useCustomerPageController from "./features/customer/customerPage/useCustomerPageController";
 
 const App = () => {
     return (
         <>
-            <CustomerPageView controller={() => CustomerPageController(CustomerService)}/>
+            <CustomerPageView controller={() => useCustomerPageController(CustomerService)}/>
         </>
     );
 }
