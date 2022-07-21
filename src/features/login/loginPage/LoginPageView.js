@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import {useSelector} from "react-redux";
 import {errorSelector, loadingSelector,} from "../LoginSelector";
-const LoginPageView = ({controller}) => {
+const LoginPageView = ({controller,service}) => {
     const {
         userName, setUserName,
         password, setPassword,
         onLogin
-    } = controller();
+    } = controller(service);
     const isLoading = useSelector(loadingSelector)
     const isError = useSelector(errorSelector)
     return (
